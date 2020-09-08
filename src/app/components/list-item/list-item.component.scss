@@ -1,0 +1,20 @@
+.list-item-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+
+    .todo-class {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+
+.delete-btn{
+    cursor: pointer;
+}
+

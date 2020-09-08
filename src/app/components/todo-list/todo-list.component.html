@@ -1,0 +1,16 @@
+<mat-card>
+    <form [formGroup]="addTodo" (ngSubmit)="addTodoHandle(addTodo.get('createTodo').value)">
+        <mat-form-field>
+            <mat-label>Add Todo</mat-label>
+            <input matInput type="text" formControlName="createTodo">
+            <mat-error *ngIf="addTodo.get('createTodo').hasError('required')">Input is required</mat-error>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="accent">Add todo</button>
+    </form>
+    <app-list-item *ngFor="let todo of todoService.getTodo()" [todo]="todo"></app-list-item>
+    <div class="sort-btn-group">
+        <button mat-raised-button color="accent">All</button>
+        <button mat-raised-button color="accent">Active</button>
+        <button mat-raised-button color="accent">Complited</button>
+    </div>
+</mat-card>
